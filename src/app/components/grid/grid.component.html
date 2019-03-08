@@ -1,0 +1,18 @@
+<div class="row">
+    <form>
+        Rows
+        <mat-form-field>
+            <input matInput min="5" type="number" name="rows" [(ngModel)]="rows">
+        </mat-form-field>
+        Columns
+        <mat-form-field>
+            <input matInput min="5" type="number" name="columns"[(ngModel)]="columns">
+        </mat-form-field>
+        <button mat-button (click)="openDialog()">Create Piece</button>
+    </form>
+</div>
+
+<mat-grid-list cols="{{columns}}" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let item of createRange(columns * rows);" class="gridUnit"></mat-grid-tile>
+    
+</mat-grid-list>

@@ -5,10 +5,8 @@ import { Component } from '@angular/core';
  * This is where everything gets loaded into.
  */
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-freehand',
+  templateUrl: './freehand.component.html'
 })
-export class AppComponent {
-  title = 'bg-helper';
+export class FreehandComponent {
 }
