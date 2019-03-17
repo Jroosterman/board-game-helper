@@ -1,11 +1,32 @@
-<h1 mat-dialog-title>Create Piece</h1>
-<div mat-dialog-content>
+<h1 mat-dialog-title>Change Space</h1>
+<div mat-dialog-content class="piece">
   <p>Choose Icon</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
+  <mat-tab-group>
+    <mat-tab label="URL">
+      <div class="modal-item">
+
+        <mat-form-field>
+          <input matInput placeholder="Copy Image Url" [(ngModel)]="url">
+        </mat-form-field>
+      </div>
+    </mat-tab>
+    <mat-tab label="Color">
+      <div class="modal-item">
+        <mat-form-field>
+          <mat-select [(value)]="color">
+            <mat-option *ngFor="let c of colors" [value]="c">
+              {{c}}
+            </mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Create</button>
+  <button mat-button (click)="clear()">Clear</button>
+  <button mat-button cdkFocusInitial (click)="changeBackground()">Change</button>
+
 </div>

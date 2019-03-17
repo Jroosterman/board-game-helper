@@ -6,6 +6,11 @@
   <h2>Board</h2>
 </mat-toolbar>
 <mat-tab-group>
+  <mat-tab label="Freehand">
+    <div class="board">
+      <app-freehand></app-freehand>
+    </div>
+  </mat-tab>
   <mat-tab label="Grid">
     <div class="board">
       <app-grid></app-grid>
@@ -16,22 +21,12 @@
       <app-table></app-table>
     </div>
   </mat-tab>
-  <mat-tab label="Freehand">
-    <div class="board">
-      <app-freehand></app-freehand>
-    </div>
-  </mat-tab>
 </mat-tab-group>
 
 <mat-toolbar>
   <h2>Components</h2>
 </mat-toolbar>
 <mat-tab-group>
-  <mat-tab label="Cards">
-    <div class="component">
-      <app-card></app-card>
-    </div>
-  </mat-tab>
   <mat-tab label="Dice">
     <div class="component">
       <app-dice></app-dice>

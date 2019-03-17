@@ -1,18 +1,21 @@
+<h3>Grid for grided boards.</h3>
+<p>Create a custom board for a game that uses a grid.  Click on each space in the grid to change its colour or assign it a URL of an image.</p>
 <div class="row">
     <form>
-        Rows
+        Set Number of Rows:
         <mat-form-field>
             <input matInput min="5" type="number" name="rows" [(ngModel)]="rows">
         </mat-form-field>
-        Columns
+        .  Set Number of Columns:
         <mat-form-field>
             <input matInput min="5" type="number" name="columns"[(ngModel)]="columns">
         </mat-form-field>
-        <button mat-button (click)="openDialog()">Create Piece</button>
+        .  Click Tile to change Piece.
     </form>
 </div>
 
 <mat-grid-list cols="{{columns}}" rowHeight="1:1">
-    <mat-grid-tile *ngFor="let item of createRange(columns * rows);" class="gridUnit"></mat-grid-tile>
+    <mat-grid-tile *ngFor="let item of (columns * rows) | range;" class="gridUnit" (click)="openDialog($event)">
+    </mat-grid-tile>
     
 </mat-grid-list>

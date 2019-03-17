@@ -1,1 +1,41 @@
-Dice
+<h3>Custom Dice</h3>
+<p>You can use this to create types of Dice and roll them to replace missing dice in your game. Use URLs of images for
+    custom designs.</p>
+<div class="row">
+    <div class="col-6">
+        <h5>Dice In Pool <button mat-raised-button (click)="addDice($event)">Add Die to Pool</button></h5>
+        <div class="bg-table">
+            <mat-list>
+                <mat-list-item class="die-list" *ngFor="let d of chosenDice; let i = index;">
+                    <div class="die"
+                        [ngStyle]="d.isUrl ? {'background-image':'url('+d.values[d.selectedIndex]+')'}: {'background-color':'white'}">
+                        <span *ngIf="!d.isUrl">{{d.values[d.selectedIndex]}}</span>
+                    </div>
+                    <button class="corner-position" mat-mini-fab (click)="removeDice(i)">
+                        <mat-icon class="x-size">clear</mat-icon>
+                    </button>
+                    <div>{{d.name}}</div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+
+    </div>
+
+    <div class="col-6">
+        <div>
+            <button mat-raised-button (click)="createDice($event)">Create Die Type</button>
+        </div>
+        <p>Create a die and add it to the pool of Dice you can add on the left.</p>
+
+        <mat-list role="list">
+            <mat-list-item role="listitem">Sum: {{sumOfDice()}}</mat-list-item>
+            <mat-list-item role="listitem">Doubles:
+                {{areThereDoubles() ? 'Yes, there are doubles.' : "There are no doubles."}}</mat-list-item>
+        </mat-list>
+
+        <div>
+            <button mat-raised-button (click)="roll()">Roll</button>
+        </div>
+    </div>
+</div>

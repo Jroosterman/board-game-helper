@@ -1,1 +1,24 @@
-Table
+<h3>Table of Player Values</h3>
+<p>This table is used to keep track of things such as player scores.</p>
+<button mat-raised-button (click)="addColumn()"> Add Player </button>
+<button mat-raised-button (click)="addRow()"> Add Row </button>
+<button mat-raised-button (click)="removeColumn()"> Remove Last Player </button>
+<button mat-raised-button (click)="removeRow()"> Remove row </button>
+
+<table class="bg-table">
+    <tr>
+        <th class="bg-col" *ngFor="let column of cols | range">
+            <mat-form-field>
+                <input matInput placeholder="Player" value="Player {{column}}">
+            </mat-form-field>
+        </th>
+    </tr>
+    <tr *ngFor="let row of rows | range;">
+        <td class="bg-col" *ngFor="let column of cols | range;">
+            <mat-form-field>
+                <input matInput placeholder="Value" value="">
+            </mat-form-field>
+        </td>
+
+    </tr>
+</table>

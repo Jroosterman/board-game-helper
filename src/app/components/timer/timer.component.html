@@ -1,1 +1,21 @@
-Timer
+<h3>Timers</h3>
+<p>A set of timers that will be used to keep track of time limits in seconds.</p>
+<div>
+    <button mat-raised-button (click)="addTimer()">Add Timer</button>
+    <button mat-raised-button (click)="removeTimer()">Remove Timer</button>
+</div>
+<mat-list>
+    <mat-list-item *ngFor="let timer of timers">
+        <mat-form-field>
+            <input matInput placeholder="Timer Name" [(value)]="timer.name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Time in Seconds" [disabled]="timer.isOn" (change)="updateTime(timer)" [(ngModel)]="timer.seconds">
+        </mat-form-field>
+        <button *ngIf="timer.isOn" (click)="stopTimer(timer);">Stop</button>
+        <button *ngIf="!timer.isOn" (click)="startTimer(timer);">Start</button>
+        <h3 class="timer">
+            {{timer.currentTime}}
+        </h3>
+    </mat-list-item>
+</mat-list>

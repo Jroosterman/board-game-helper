@@ -9,7 +9,14 @@ import {
   MatInputModule,
   MatGridListModule,
   MatDialogModule,
-  MatButtonModule
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatSelectModule,
+  MatTableModule,
+  MatListModule,
+  MatBadgeModule,
+  MatIconModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/cards/card.component';
@@ -21,6 +28,10 @@ import { TableComponent } from './components/table/table.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { FormsModule } from '@angular/forms';
 import { PieceModalComponent } from './modals/piece.modal';
+import { AddDiceModalComponent } from './modals/add.dice.modal';
+import { CreateDiceModalComponent } from './modals/create.dice.modal';
+import { RangePipe } from './services/utils.components';
+import { CanvasWhiteboardModule } from 'ng2-canvas-whiteboard';
 
 /**
  * This is the main module that is ues to load in all of the components used by the applicaiton into the right spot.
@@ -35,7 +46,10 @@ import { PieceModalComponent } from './modals/piece.modal';
     GridComponent,
     TableComponent,
     TimerComponent,
-    PieceModalComponent
+    PieceModalComponent,
+    AddDiceModalComponent,
+    CreateDiceModalComponent,
+    RangePipe
   ],
   imports: [
     BrowserModule,
@@ -47,10 +61,18 @@ import { PieceModalComponent } from './modals/piece.modal';
     MatGridListModule,
     FormsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatTableModule,
+    CanvasWhiteboardModule,
+    MatListModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PieceModalComponent]
+  entryComponents: [PieceModalComponent, AddDiceModalComponent, CreateDiceModalComponent]
 })
 export class AppModule { }

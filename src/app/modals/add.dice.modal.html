@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Add Dice</h1>
+<div mat-dialog-content class="">
+  <p>Choose Die</p>
+
+  <mat-form-field>
+    <mat-select placeholder="Choose Dice" [(value)]="chosenDice">
+      <mat-option *ngFor="let die of data.dice" [value]="die">
+        {{die.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="addDie()">Add</button>
+
+</div>

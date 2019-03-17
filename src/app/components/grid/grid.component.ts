@@ -14,6 +14,8 @@ export class GridComponent {
 
   rows = 5;
   columns = 5;
+
+  currentTile = null;
   /**
    * Constructor initializes Dialogs.
    * @param dialog Dialog ability
@@ -33,14 +35,17 @@ export class GridComponent {
   }
 
   /**
-   * Open a dialog modal 
+   * Open a dialog modal
    */
-  openDialog(): void {
+  openDialog($event): void {
+    this.currentTile = $event;
     const dialogRef = this.dialog.open(PieceModalComponent, {
-      width: '250px'
+      width: '600px',
+      data: {background: ''},
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.currentTile.srcElement.style.background = result.background;
       console.log('The dialog was closed');
     });
   }

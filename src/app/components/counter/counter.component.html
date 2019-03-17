@@ -1,1 +1,24 @@
-Counter
+<h3>List of counters per Player</h3>
+<p>In many games and card games they will ask for counters that they may not provide.  Use this to keep track of counters.</p>
+<button mat-raised-button (click)="addPlayer()">Add a Player</button>
+<div class="row">
+    <div class="counter-columns" *ngFor="let d of data; let i = index;">
+        <mat-list>
+            <mat-list-item>
+                <mat-form-field>
+                    <input matInput placeholder="Player Name" [(ngModel)]="d.player">
+                </mat-form-field>
+            </mat-list-item>
+            <mat-list-item *ngFor="let c of d.counters | range">
+                <mat-form-field>
+                    <input matInput placeholder="Counter Name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="number" placeholder="Number of Counters">
+                </mat-form-field>
+            </mat-list-item>
+        </mat-list>
+        <button class="button-space" mat-raised-button (click)="addCounter(d)">Add Counter Type</button>
+        <button mat-raised-button (click)="removeCounter(d)">Remove Counter Type</button>
+    </div>
+</div>

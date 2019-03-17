@@ -1,1 +1,11 @@
-Freehand
+<h3>Freehand Drawing</h3>
+<p>Use this page to draw freehand anything that you want for your game..</p>
+<span>Click Draw to start Drawing on the page.  Brought to you by <a href="https://github.com/webfactorymk/ng2-canvas-whiteboard">ng2 canvas whiteboard</a></span>
+<div style="height: 600px">
+    <canvas-whiteboard #canvasWhiteboard [drawButtonClass]="'drawButtonClass'" [drawButtonText]="'Draw'"
+        [clearButtonClass]="'clearButtonClass'" [clearButtonText]="'Clear'" [undoButtonText]="'Undo'"
+        [undoButtonEnabled]="true" [redoButtonText]="'Redo'" [redoButtonEnabled]="true" [colorPickerEnabled]="true"
+        [downloadedFileName]="'examplefileName'" (onBatchUpdate)="sendBatchUpdate($event)" (onClear)="onCanvasClear()"
+        (onUndo)="onCanvasUndo($event)" (onRedo)="onCanvasRedo($event)">
+    </canvas-whiteboard>
+</div>

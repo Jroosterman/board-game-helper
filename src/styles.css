@@ -1,22 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 .mat-toolbar-single-row {
     height:auto !important;
 }
 
 .board {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px 20px 20px 20px;
     background-color: #EEEEFF;
+    margin:0px 10px 10px 10px;
+    border-left: 1px solid rgba(0,0,0,.12);
+    border-right: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0,0,0,.12);
 }
 
 .component { 
     background-color: #EEFFEE;
-
+    margin:0px 10px 10px 10px;
+    border-left: 1px solid rgba(0,0,0,.12);
+    border-right: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    padding: 20px;
 }
 
 .gridUnit {
     background: white;
     border: solid black;
+}
+
+.mat-figure {
+    background-size: 100% 100% !important;
+}
+
+.bg-table {
+    background: white;
+    border: solid black 1px;
+    margin-top: 10px;
+}
+
+canvas-whiteboard {
+    display: block;
+    height: 100%;
+  }
+
+
+.canvas-whiteboard {
+    display: block;
+    height: 100%;
+}
+
+canvas {
+    border: 1px solid black;
+}
+  
+.canvas_whiteboard_buttons {
+    margin-right:20px;
+}
+
+.die {
+    border-radius: 10px;
+    border: solid black 3px;
+    align-content:center;
+    width:75px;
+    height:75px;
+    margin:5px;
+    word-wrap: break-word;
+    background-size: 100% 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      /* the same as your div height */
+}
+.die-list {
+    margin:10px !important;
+    height: auto !important;
+}
+
+.corner-position {
+    margin-top:-50px !important;
+    margin-left:-10px !important;
+    width:30px !important;
+    height:30px !important;
+    background-color: grey !important;
+}
+
+.x-size {
+    font-size: 10pt !important;
+}
+
+.counter-columns {
+    background-color:white;
+    border: solid black 1px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.button-space {
+    margin-right:5px !important;
+}
+
+.timer {
+    margin-left:50px;
+    font-family: 'Orbitron';
 }
